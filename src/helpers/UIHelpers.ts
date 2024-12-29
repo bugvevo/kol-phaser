@@ -1,6 +1,11 @@
 import * as Phaser from 'phaser';
 
 export default class UIHelpers {
+	static browserLeftOffset = 10;
+	static browserRightOffset = 11;
+	static browserTopOffset = 98;
+	static browserBottomOffset = 26;
+
 	static mainFont = {
 		fontFamily: 'Arial',
 		fontSize: 20,

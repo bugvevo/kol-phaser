@@ -1,5 +1,6 @@
 import { Scene } from 'phaser';
 import UIHelpers from '../helpers/UIHelpers';
+import PostData from '../data/PostData';
 
 export class PhaseOne extends Scene {
 	constructor() {
@@ -12,6 +13,24 @@ export class PhaseOne extends Scene {
 
 		this.input.once('pointerdown', () => {
 			this.scene.start('GameOver');
+		});
+	}
+
+	private addPosts(x: number, y: number, browserWidth: number) {
+		const browserInnerWidth =
+			browserWidth -
+			UIHelpers.browserLeftOffset -
+			UIHelpers.browserRightOffset;
+
+		PostData.posts.forEach((post, index) => {
+			const currentY = y + index * 100;
+
+			this.add
+				.rectangle(x, currentY, browserInnerWidth, 80, 0xff0000, 1)
+				.setOrigin(0.5, 0);
+			this.add
+				.text(x, currentY, post.name, UIHelpers.mainFont)
+				.setOrigin(0.5, 0);
 		});
 	}
 
@@ -54,6 +73,18 @@ export class PhaseOne extends Scene {
 	}
 
 	private addBrowserWindow() {
-		UIHelpers.addWindow(this, 194, 60, 1000, 800);
+		const leftEdgeX = 194;
+		const topEdgeY = 60;
+		const browserWidth = 1000;
+		const centerX =
+			leftEdgeX + browserWidth / 2 + UIHelpers.browserLeftOffset;
+
+		this.addPosts(
+			centerX,
+			topEdgeY + UIHelpers.browserTopOffset,
+			browserWidth
+		);
+
+		UIHelpers.addWindow(this, leftEdgeX, topEdgeY, 1000, 800);
 	}
 }
