@@ -8,8 +8,8 @@ import { Game, Types } from 'phaser';
 
 const config: Types.Core.GameConfig = {
 	type: Phaser.AUTO,
-	width: 960,
-	height: 720,
+	width: 1280,
+	height: 960,
 	zoom: 1,
 	parent: 'game-container',
 	backgroundColor: '#028af8',
