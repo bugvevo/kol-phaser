@@ -17,14 +17,14 @@ export default class UIHelpers {
 		width: number,
 		height: number
 	): Phaser.GameObjects.NineSlice {
-		const leftWidth = 136;
-		const rightWidth = 177;
-		const topHeight = 105;
-		const bottomHeight = 54;
+		const leftWidth = 121;
+		const rightWidth = 170;
+		const topHeight = 98;
+		const bottomHeight = 26;
 
 		const window = scene.add.nineslice(
-			0,
-			0,
+			x,
+			y,
 			'textures',
 			'browserWindow',
 			width,
@@ -34,19 +34,22 @@ export default class UIHelpers {
 			topHeight,
 			bottomHeight
 		);
+		window.setOrigin(0, 0);
 
 		if (height < topHeight + bottomHeight) {
 			console.warn(
-				'--- Window height is smaller than recommended for ninesliced asset browserWindow ---'
+				`--- Window height is too small for asset browserWindow; minimum is ${
+					topHeight + bottomHeight
+				} ---`
 			);
 		}
 		if (width < leftWidth + rightWidth) {
 			console.warn(
-				'--- Window width is smaller than recommended for ninesliced asset browserWindow ---'
+				`--- Window width is too small for asset browserWindow; minimum is ${
+					leftWidth + rightWidth
+				} ---`
 			);
 		}
-
-		window.setPosition(x, y);
 
 		return window;
 	}
