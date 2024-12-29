@@ -35,7 +35,7 @@ export class Game extends Scene {
 		];
 
 		icons.forEach((iconData, index) => {
-			const currentY = startingY + index * 106;
+			const currentY = startingY + index * 126;
 			const iconHeight = 64;
 
 			this.add

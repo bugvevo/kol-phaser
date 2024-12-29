@@ -3,7 +3,7 @@ import * as Phaser from 'phaser';
 export default class UIHelpers {
 	static mainFont = {
 		fontFamily: 'Arial',
-		fontSize: 18,
+		fontSize: 20,
 		color: '#ffffff',
 		align: 'center',
 	};
