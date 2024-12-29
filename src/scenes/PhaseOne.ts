@@ -1,9 +1,9 @@
 import { Scene } from 'phaser';
 import UIHelpers from '../helpers/UIHelpers';
 
-export class Game extends Scene {
+export class PhaseOne extends Scene {
 	constructor() {
-		super('Game');
+		super('PhaseOne');
 	}
 
 	create() {
