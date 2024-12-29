@@ -18,7 +18,7 @@ export class Game extends Scene {
 
 	private addDesktopIcons() {
 		const startingY = 60;
-		const x = 70;
+		const x = 76;
 		const icons = [
 			{
 				textureName: 'iconKernia',
