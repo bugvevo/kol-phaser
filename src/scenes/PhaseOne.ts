@@ -9,7 +9,6 @@ export class PhaseOne extends Scene {
 	create() {
 		this.addBrowserWindow();
 		this.addDesktopIcons();
-		UIHelpers.addCenteredText(this, 30, 'hello world');
 
 		this.input.once('pointerdown', () => {
 			this.scene.start('GameOver');
