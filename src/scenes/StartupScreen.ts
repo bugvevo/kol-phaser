@@ -1,5 +1,4 @@
 import { Scene } from 'phaser';
-import UIHelpers from '../helpers/UIHelpers';
 import Colors from '../helpers/Colors';
 
 export class StartupScreen extends Scene {
