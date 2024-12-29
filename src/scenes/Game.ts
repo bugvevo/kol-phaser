@@ -55,6 +55,6 @@ export class Game extends Scene {
 	}
 
 	private addBrowserWindow() {
-		UIHelpers.addWindow(this, 194, 60, 800, 600);
+		UIHelpers.addWindow(this, 194, 60, 1000, 800);
 	}
 }

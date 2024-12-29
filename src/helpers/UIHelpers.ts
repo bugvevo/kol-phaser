@@ -25,13 +25,14 @@ export default class UIHelpers {
 			y,
 			'textures',
 			'browserWindow',
-			width,
-			height,
+			width / 2,
+			height / 2,
 			leftWidth,
 			rightWidth,
 			topHeight,
 			bottomHeight
 		);
+		window.setScale(2);
 		window.setOrigin(0, 0);
 
 		if (height < topHeight + bottomHeight) {
