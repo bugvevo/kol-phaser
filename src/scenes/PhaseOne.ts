@@ -1,15 +1,14 @@
 import { Scene } from 'phaser';
 import UIHelpers from '../helpers/UIHelpers';
 
-export class Game extends Scene {
+export class PhaseOne extends Scene {
 	constructor() {
-		super('Game');
+		super('PhaseOne');
 	}
 
 	create() {
 		this.addBrowserWindow();
 		this.addDesktopIcons();
-		UIHelpers.addCenteredText(this, 30, 'hello world');
 
 		this.input.once('pointerdown', () => {
 			this.scene.start('GameOver');
