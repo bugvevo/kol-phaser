@@ -18,13 +18,21 @@ export class Game extends Scene {
 
 	private addDesktopIcons() {
 		const startingY = 60;
+		const x = 70;
 		const icons = ['iconKernia', 'iconDoomscrolls', 'readme'];
 
-		icons.forEach((iconTexture, index) => {
+		icons.forEach((iconName, index) => {
+			const currentY = startingY + index * 106;
+			const iconHeight = 64;
+
 			this.add
-				.image(30, startingY + index * 82, 'textures', iconTexture)
-				.setOrigin(0, 0)
+				.image(x, currentY, 'textures', iconName)
+				.setOrigin(0.5, 0)
 				.setScale(2);
+
+			this.add
+				.text(x, currentY + iconHeight, iconName, UIHelpers.mainFont)
+				.setOrigin(0.5, 0);
 		});
 	}
 
