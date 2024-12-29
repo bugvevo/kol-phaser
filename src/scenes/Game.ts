@@ -19,19 +19,37 @@ export class Game extends Scene {
 	private addDesktopIcons() {
 		const startingY = 60;
 		const x = 70;
-		const icons = ['iconKernia', 'iconDoomscrolls', 'readme'];
+		const icons = [
+			{
+				textureName: 'iconKernia',
+				text: 'Kernia On-Line',
+			},
+			{
+				textureName: 'iconDoomscrolls',
+				text: 'Doomscrolls',
+			},
+			{
+				textureName: 'readme',
+				text: 'README.txt',
+			},
+		];
 
-		icons.forEach((iconName, index) => {
+		icons.forEach((iconData, index) => {
 			const currentY = startingY + index * 106;
 			const iconHeight = 64;
 
 			this.add
-				.image(x, currentY, 'textures', iconName)
+				.image(x, currentY, 'textures', iconData.textureName)
 				.setOrigin(0.5, 0)
 				.setScale(2);
 
 			this.add
-				.text(x, currentY + iconHeight, iconName, UIHelpers.mainFont)
+				.text(
+					x,
+					currentY + iconHeight,
+					iconData.text,
+					UIHelpers.mainFont
+				)
 				.setOrigin(0.5, 0);
 		});
 	}
